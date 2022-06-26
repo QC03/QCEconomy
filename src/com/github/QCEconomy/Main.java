@@ -6,6 +6,8 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.github.QCEconomy.Command.CashAdminCmd;
+import com.github.QCEconomy.Command.CashUserCmd;
 import com.github.QCEconomy.Command.MoneyAdminCmd;
 import com.github.QCEconomy.Command.MoneyUserCmd;
 import com.github.QCEconomy.Event.onFirstJoin;
@@ -24,8 +26,10 @@ public class Main extends JavaPlugin implements Listener {
 		
 		getCommand("돈").setExecutor(new MoneyUserCmd());
 		getCommand("돈관리").setExecutor(new MoneyAdminCmd());
-
 		
+		getCommand("캐시").setExecutor(new CashUserCmd());
+		getCommand("캐시관리").setExecutor(new CashAdminCmd());
+
 	}
 	
 	@Override

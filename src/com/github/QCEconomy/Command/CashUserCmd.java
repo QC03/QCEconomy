@@ -8,14 +8,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.github.QCEconomy.MoneyDB.MoneyDatabase;
+import com.github.QCEconomy.CashDB.CashDatabase;
 
-public class MoneyUserCmd implements CommandExecutor {
-
+public class CashUserCmd implements CommandExecutor {
 	
-	private String getMoneyPrefix()
+	private String getCashPrefix()
 	{
-		return ChatColor.GREEN + "[Money] " + ChatColor.RESET;
+		return ChatColor.GREEN + "[Cash] " + ChatColor.RESET;
 	}
 	
 	
@@ -27,8 +26,8 @@ public class MoneyUserCmd implements CommandExecutor {
 		Player p = (Player) sender;
 		String uuid = p.getUniqueId().toString();
 		
-		p.sendMessage(getMoneyPrefix() + p.getDisplayName() + " 님의 보유 돈");
-		p.sendMessage(getMoneyPrefix() + "     " + NumberFormat.getInstance().format(MoneyDatabase.getUserMoney(uuid)) + " 원");
+		p.sendMessage(getCashPrefix() + p.getDisplayName() + " 님의 보유 캐시");
+		p.sendMessage(getCashPrefix() + "     " + NumberFormat.getInstance().format(CashDatabase.getUserCash(uuid)) + " 원");
 		return true;
 
 	}
