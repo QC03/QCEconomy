@@ -1,11 +1,13 @@
 package com.github.QCEconomy.MoneyDB;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBConnection {
+public class MoneyDBConnection {
 
 	private static Connection con;
 	
@@ -27,13 +29,22 @@ public class DBConnection {
 	
 	public static void createDatabase()
 	{
-		Connection con = DBConnection.getConnection();
+		Connection con = MoneyDBConnection.getConnection();
 		Statement stmt;
 		try {
 			
 			stmt = con.createStatement();
 			
 			stmt.executeUpdate("use economy");
+			
+			DatabaseMetaData dbm = con.getMetaData();
+			ResultSet tables = dbm.getTables(null, null, "economy", null);
+			if (!(tables.next()))
+			{ 
+				con.close();
+				stmt.close();
+				return;
+			}
 			
 			String createTableSQL = "CREATE TABLE money " +
 	                   "(uuid CHAR(36) not NULL, " +

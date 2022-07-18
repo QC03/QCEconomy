@@ -11,7 +11,7 @@ public class CashDatabase {
 	{
 		try {
 			
-			Connection con = DBConnection.getConnection();
+			Connection con = CashDBConnection.getConnection();
 			Statement stmt = con.createStatement();
 			
 			stmt.executeUpdate("use economy");
@@ -34,7 +34,7 @@ public class CashDatabase {
 		
 		try {
 			
-			Connection con = DBConnection.getConnection();
+			Connection con = CashDBConnection.getConnection();
 			Statement stmt = con.createStatement();
 			
 			stmt.executeUpdate("use economy");
@@ -68,7 +68,7 @@ public class CashDatabase {
 		
 		try {
 			
-			Connection con = DBConnection.getConnection();
+			Connection con = CashDBConnection.getConnection();
 			Statement stmt = con.createStatement();
 			
 			stmt.executeUpdate("use economy");

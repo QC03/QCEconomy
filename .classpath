@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="D:/Plugin Development/Spigot Core/spigot.jar"/>
-	<classpathentry kind="lib" path="D:/Plugin Development/Lib/QCUtilLib.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/QCUtilLib"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

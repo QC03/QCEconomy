@@ -1,6 +1,6 @@
 main : com.github.QCEconomy.Main
 name : QCEconomy
-version : 0.0.1
+version : 0.0.2
 author : QC
 description : QC Economy Plugin
 
@@ -10,3 +10,10 @@ commands:
   
   돈관리:
     description: 돈 관련 어드민 명령어
+  
+  
+  캐시관리:
+    description: 캐시관련 어드민 명령어
+  
+  캐시:
+    description: 캐시 관련 명령어

@@ -18,7 +18,7 @@ public class onFirstJoin implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 	  
-		// if (event.getPlayer().hasPlayedBefore()) { return; }
+		if (event.getPlayer().hasPlayedBefore()) { return; }
 		
 		String uuid = event.getPlayer().getUniqueId().toString();
 		

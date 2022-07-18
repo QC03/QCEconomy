@@ -27,8 +27,25 @@ public class MoneyUserCmd implements CommandExecutor {
 		Player p = (Player) sender;
 		String uuid = p.getUniqueId().toString();
 		
-		p.sendMessage(getMoneyPrefix() + p.getDisplayName() + " 님의 보유 돈");
-		p.sendMessage(getMoneyPrefix() + "     " + NumberFormat.getInstance().format(MoneyDatabase.getUserMoney(uuid)) + " 원");
+		if (args.length <= 0)
+		{
+			p.sendMessage(getMoneyPrefix() + p.getDisplayName() + " 님의 보유 돈");
+			p.sendMessage(getMoneyPrefix() + "     " + NumberFormat.getInstance().format(MoneyDatabase.getUserMoney(uuid)) + " 원");
+
+			p.sendMessage(getMoneyPrefix() + " /돈 도움말");
+			return true;
+		}
+		
+		if (args[0].equals("도움말"))
+		{
+			sender.sendMessage(" ");
+			sender.sendMessage(getMoneyPrefix() + "/돈");
+			sender.sendMessage(getMoneyPrefix() + "/돈 순위");
+			sender.sendMessage(" ");
+			
+			return true;
+		}
+		
 		return true;
 
 	}
