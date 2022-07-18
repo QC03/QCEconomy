@@ -40,16 +40,16 @@ My Minecraft Economy Plugin
 ### Admin Command
 > Need OP Permission
 
-- /돈관리 확인 (닉네임)
+- /돈관리 확인 (Name)
   - Check to User's Money
 
-- /돈관리 설정 (닉네임) (값)
+- /돈관리 설정 (Name) (Value)
   - Set to User's Money
 
-- /돈관리 지급 (닉네임) (값)
+- /돈관리 지급 (Name) (Value)
   - Add to User's Money
 
-- /돈관리 차감 (닉네임) (값)
+- /돈관리 차감 (Name) (Value)
   - Subtract to User's Money
 
 
@@ -64,16 +64,16 @@ My Minecraft Economy Plugin
 ### Admin Command
 > Need OP Permission
 
-- /캐시관리 확인 (닉네임)
+- /캐시관리 확인 (Name)
   - Check to User's Cash
 
-- /캐시관리 설정 (닉네임) (값)
+- /캐시관리 설정 (Name) (Value)
   - Set to User's Cash
 
-- /캐시관리 지급 (닉네임) (값)
+- /캐시관리 지급 (Name) (Value)
   - Add to User's Cash
 
-- /캐시관리 차감 (닉네임) (값)
+- /캐시관리 차감 (Name) (Value)
   - Subtract to User's Cash
 
 
