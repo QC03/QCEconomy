@@ -6,13 +6,12 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.QCEconomy.CashDB.CashDBConnection;
 import com.github.QCEconomy.Command.CashAdminCmd;
 import com.github.QCEconomy.Command.CashUserCmd;
 import com.github.QCEconomy.Command.MoneyAdminCmd;
 import com.github.QCEconomy.Command.MoneyUserCmd;
+import com.github.QCEconomy.Database.EcoSQL;
 import com.github.QCEconomy.Event.onFirstJoin;
-import com.github.QCEconomy.MoneyDB.MoneyDBConnection;
 
 public class Main extends JavaPlugin implements Listener {
 	
@@ -32,8 +31,10 @@ public class Main extends JavaPlugin implements Listener {
 		getCommand("캐시").setExecutor(new CashUserCmd());
 		getCommand("캐시관리").setExecutor(new CashAdminCmd());
 		
-		CashDBConnection.createDatabase();
-		MoneyDBConnection.createDatabase();
+		EcoSQL ecoSql = new EcoSQL();
+		
+		ecoSql.createDatabase("cash");
+		ecoSql.createDatabase("money");
 
 	}
 	

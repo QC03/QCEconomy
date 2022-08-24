@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.github.QCEconomy.MoneyDB.MoneyDatabase;
+import com.github.QCEconomy.Database.Money;
 
 public class MoneyUserCmd implements CommandExecutor {
 
@@ -30,7 +30,7 @@ public class MoneyUserCmd implements CommandExecutor {
 		if (args.length <= 0)
 		{
 			p.sendMessage(getMoneyPrefix() + p.getDisplayName() + " 님의 보유 돈");
-			p.sendMessage(getMoneyPrefix() + "     " + NumberFormat.getInstance().format(MoneyDatabase.getUserMoney(uuid)) + " 원");
+			p.sendMessage(getMoneyPrefix() + "     " + NumberFormat.getInstance().format(new Money().getUserMoney(uuid)) + " 원");
 
 			p.sendMessage(getMoneyPrefix() + " /돈 도움말");
 			return true;

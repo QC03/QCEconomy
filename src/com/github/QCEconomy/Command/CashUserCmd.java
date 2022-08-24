@@ -8,7 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.github.QCEconomy.CashDB.CashDatabase;
+import com.github.QCEconomy.Database.Cash;
+
 
 public class CashUserCmd implements CommandExecutor {
 	
@@ -27,7 +28,7 @@ public class CashUserCmd implements CommandExecutor {
 		String uuid = p.getUniqueId().toString();
 		
 		p.sendMessage(getCashPrefix() + p.getDisplayName() + " 님의 보유 캐시");
-		p.sendMessage(getCashPrefix() + "     " + NumberFormat.getInstance().format(CashDatabase.getUserCash(uuid)) + " 원");
+		p.sendMessage(getCashPrefix() + "     " + NumberFormat.getInstance().format(new Cash().getUserCash(uuid)) + " 원");
 		return true;
 
 	}
