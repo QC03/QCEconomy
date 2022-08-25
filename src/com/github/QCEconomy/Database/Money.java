@@ -2,6 +2,9 @@ package com.github.QCEconomy.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class Money {
 
@@ -66,10 +69,49 @@ public class Money {
 	}
 	
 	
-	/**
-	public String getMoneyRank()
+	public List<EcoUser> getMoneyRank()
 	{
-		객체를 하나하나 만들어서 출력
+		
+		List<Integer> moneyList = new ArrayList<Integer>();
+		List<EcoUser> userList = new ArrayList<EcoUser>();
+		
+		try {
+			
+			EcoSQL ecoSql = new EcoSQL();
+			
+			String selectSQL = "SELECT uuid, money FROM money";
+			ResultSet rs = ecoSql.stmt.executeQuery(selectSQL);
+			
+			int money;
+			String uuid;
+			while (rs.next()) {
+				money = rs.getInt("money");
+				uuid = rs.getString("uuid");
+				
+				moneyList.add(money);
+				userList.add(new EcoUser(uuid, money));
+			}
+			
+			ecoSql.closeSQL();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		if (moneyList == null || userList == null) { return null; }
+		
+		List<EcoUser> ranking = new ArrayList<EcoUser>();
+		moneyList.sort(Comparator.naturalOrder());
+		for ( int rankMoney : moneyList)
+		{
+			for ( EcoUser user : userList )
+			{
+				if (rankMoney != user.money) { continue; }
+				
+				ranking.add(user);
+			}
+		}
+		
+		return ranking;
 	}
-	**/
 }

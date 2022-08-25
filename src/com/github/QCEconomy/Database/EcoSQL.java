@@ -49,7 +49,7 @@ public class EcoSQL {
 			
 			String createTableSQL = "CREATE TABLE " + type +
 	                   " (uuid CHAR(36) not NULL, " +
-	                   " cash INT(255) not NULL, " + 
+	                   type + " INT(255) not NULL, " + 
 	                   " PRIMARY KEY ( uuid ))";
 			
 			this.stmt.executeUpdate(createTableSQL);
